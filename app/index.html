@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<div class="person"></div>
+
+<script src="scripts/vendor/require.js"></script>
+<script>
+    require(['backbone', 'underscore', 'scripts/models/person'], function(Backbone, _, Person){
+
+        $(function($){
+            var person = new Person({
+                first: 'Laurent',
+                last: 'Kempé',
+                age: 42
+            });
+
+            $('.person').html(person.get('last'));
+
+        });
+    })
+</script>
+
+</body>
+</html>

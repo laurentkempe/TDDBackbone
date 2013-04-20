@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>Test'em</title>
+    <script src="/testem/jasmine.js"></script>
+    <script src="/testem.js"></script>
+    <script src="/testem/jasmine-html.js"></script>
+    <link rel="stylesheet" href="/testem/jasmine.css">
+</head>
+<body>
+<h1 class="tests">Tests</h1>
+<div id="jasmine_content"></div>
+
+<script src="scripts/vendor/require.js"></script>
+<script>
+    require(
+        ['jquery', 'tests/models/personTest'],
+            function ($, Person) {
+                var jasmineEnv = jasmine.getEnv();
+                jasmineEnv.addReporter(new jasmine.HtmlReporter);
+                $(function(){
+                    jasmineEnv.execute();
+                })
+        })
+</script>
+
+</body>
+</html>
